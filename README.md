@@ -16,7 +16,9 @@ $ catkin_make
 
 $ cd build/pepper_meshes
 
-$ make pepper_meshes_meshes (install meshes in "~/catkin_ws/src/pepper_meshes")
+$ make pepper_meshes_meshes
+
+$ cp -r ~/catkin_ws/devel/share/pepper_meshes/meshes ~/catkin_ws/src/pepper_meshes
 
 $ source ~/.bashrc
 
