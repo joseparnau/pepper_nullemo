@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find pepper_platform_rviz_publisher)/launch/pepper_platform_rviz_publisher.launch" />
+	
+	<node name="pepper_random_pose_generator" pkg="pepper_nullemo" type="pepper_random_pose_generator" output="screen" />
+</launch>

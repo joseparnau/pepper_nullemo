@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find pepper_platform_rviz_publisher)/launch/pepper_platform_rviz_publisher.launch" />
+	
+	<node name="pepper_nullemo" pkg="pepper_nullemo" type="pepper_nullemo" output="screen" />
+</launch>

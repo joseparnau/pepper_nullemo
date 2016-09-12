@@ -1,0 +1,11 @@
+<launch>	
+	<!-- Only poses are visualized, not Pepper robot itself -->
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find pepper_nullemo)/rviz/pepper_poses_visualization.rviz" required="true"/>
+	
+	<node name="pepper_poses_to_rviz" pkg="pepper_nullemo" type="pepper_poses_to_rviz" output="screen">
+	  <remap from="pepper_poses" to="pepper_random_poses"/>
+	</node>
+	
+	<node name="pepper_random_pose_generator" pkg="pepper_nullemo" type="pepper_random_pose_generator"/>
+</launch>

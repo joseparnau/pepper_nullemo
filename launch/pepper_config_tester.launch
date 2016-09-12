@@ -1,0 +1,12 @@
+<launch>
+	<!--include file="$(find pepper_platform_rviz_publisher)/launch/pepper_platform_rviz_publisher.launch" /-->
+	
+	<param name="robot_description" textfile="$(find pepper_platform_rviz_publisher)/urdf/pepper_platform_extended.urdf" />
+	
+	<node name="pepper_platform_rviz_publisher" pkg="pepper_platform_rviz_publisher" type="pepper_platform_rviz_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find pepper_platform_rviz_publisher)/rviz/pepper_platform_rviz_publisher.rviz" required="true"/>	
+	
+	<node name="pepper_config_tester" pkg="pepper_nullemo" type="pepper_config_tester" output="screen" />
+</launch>

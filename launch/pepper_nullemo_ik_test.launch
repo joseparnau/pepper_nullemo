@@ -1,0 +1,18 @@
+<launch>
+	<param name="robot_description" textfile="$(find pepper_platform_rviz_publisher)/urdf/pepper_platform_extended.urdf" />
+	
+	<node name="pepper_platform_rviz_publisher" pkg="pepper_platform_rviz_publisher" type="pepper_platform_rviz_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find pepper_nullemo)/rviz/pepper_config_poses_visualization.rviz" required="true"/>
+	
+	<node name="pepper_poses_to_rviz" pkg="pepper_nullemo" type="pepper_poses_to_rviz" output="screen">
+	  <remap from="pepper_poses" to="pepper_offset_random_poses"/>
+	</node>
+	
+	<node name="pepper_offset_pose_from_config_generator" pkg="pepper_nullemo" type="pepper_offset_pose_from_config_generator" output="screen"/>
+	
+	<node name="pepper_nullemo" pkg="pepper_nullemo" type="pepper_nullemo" output="screen">
+	  <remap from="pepper_desired_poses" to="pepper_offset_random_poses"/>
+	</node>
+</launch>
