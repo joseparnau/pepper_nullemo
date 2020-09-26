@@ -1,5 +1,8 @@
 # pepper_nullemo
 
+This code implements the work presented in:
+Claret, J., Venture, G. & Basañez, L. Exploiting the Robot Kinematic Redundancy for Emotion Conveyance to Humans as a Lower Priority Task. Int J of Soc Robotics 9, 277–292 (2017). https://doi.org/10.1007/s12369-016-0387-2
+
 # Installation (+ catkin workspace creation)
 
 $ cd ~/catkin_ws/src
